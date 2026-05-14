@@ -5,17 +5,17 @@ import type { Movie } from "../../types/movie"
 
 interface MovieModalProps{
     movie: Movie;
-    onCloset: () => void;
+    onClose: () => void;
 }
 
-const modalA = document.getElementById("modalA") as HTMLElement;
+const modalA = document.getElementById("modal-root") as HTMLElement;
 
-export default function MovieModal({ movie, onCloset }: MovieModalProps) {
+export default function MovieModal({ movie, onClose }: MovieModalProps) {
     
     useEffect(() => {
         const handlEl = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
-                onCloset();
+                onClose();
             }
         };
 
@@ -26,11 +26,11 @@ export default function MovieModal({ movie, onCloset }: MovieModalProps) {
             document.removeEventListener("keydown", handlEl);
             document.body.style.overflow = "auto";
         };
-    }, [onCloset]);
+    }, [onClose]);
 
     const handleModalClick = (event: React.MouseEvent<HTMLDivElement>) => {
         if (event.target === event.currentTarget) {
-            onCloset();
+            onClose();
         
         }
     };
@@ -46,7 +46,7 @@ export default function MovieModal({ movie, onCloset }: MovieModalProps) {
         <button
           className={css.closeButton}
           aria-label="Close modal"
-          onClick={onCloset}
+          onClick={onClose}
         >
           &times;
         </button>

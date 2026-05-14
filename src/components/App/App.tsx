@@ -50,7 +50,7 @@ export default function App() {
       {selectedMovie && (
         <MovieModal
           movie={selectedMovie}
-          onCloset={() => setSelectedMovie(null)}
+          onClose={() => setSelectedMovie(null)}
         />
       )}
     </>
