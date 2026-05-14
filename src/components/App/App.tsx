@@ -4,7 +4,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import Loader from "../Loader/Loader";
 import MovieGrid from "../MovieGrid/MovieGrid";
 import MovieModal from "../MovieModal/MovieModal";
-import { fetchMovies } from "../../services/configObject";
+import { fetchMovies } from "../../services/movieService";
 
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import type { Movie } from "../../types/movie";
